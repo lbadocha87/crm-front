@@ -9,7 +9,7 @@ const AppRoutes = (props) => {
     const token = props.user?.jwt || null;
 
     if (!token) {
-      return <Navigate to={process.env.WEB_HOST ? "/" + process.env.WEB_HOST : "/"} replace />;
+      return <Navigate to="/crm-front/" replace />;
     }
 
     return children;
@@ -18,16 +18,12 @@ const AppRoutes = (props) => {
   return (
     <Routes>
       <Route
-        path={process.env.WEB_HOST ? "/" + process.env.WEB_HOST : "/"}
+        path="/crm-front/"
         element={<Login user={props.user} setUser={props.setUser} />}
       />
 
       <Route
-        path={
-          process.env.WEB_HOST
-            ? "/" + process.env.WEB_HOST + "/customers"
-            : "/customers"
-        }
+        path="/crm-front/customers"
         element={
           <ProtectedRoute>
             <Home />
@@ -36,11 +32,7 @@ const AppRoutes = (props) => {
       />
 
       <Route
-        path={
-          process.env.WEB_HOST
-            ? "/" + process.env.WEB_HOST + "/add-customer"
-            : "/add-customer"
-        }
+        path= "/crm-front/add-customer"
         element={
           <ProtectedRoute>
             <AddCustomer />
@@ -49,11 +41,7 @@ const AppRoutes = (props) => {
       />
 
       <Route
-        path={
-          process.env.WEB_HOST
-            ? "/" + process.env.WEB_HOST + "/customer/:id"
-            : "/customer/:id"
-        }
+        path= "/crm-front/customer/:id"
         element={
           <ProtectedRoute>
             <SingleCustomer />

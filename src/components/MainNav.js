@@ -14,7 +14,7 @@ const MainNav = (props) => {
       <Container>
         <Navbar.Brand
           as={Link}
-          to={process.env.WEB_HOST ? "/" + process.env.WEB_HOST : "/"}
+          to="/crm-front/"
         >
           CRM
         </Navbar.Brand>
@@ -22,17 +22,13 @@ const MainNav = (props) => {
           {props.user && (
             <Nav.Link
               as={Link}
-              to={
-                process.env.WEB_HOST
-                  ? "/" + process.env.WEB_HOST + "/add-customer"
-                  : "/add-customer"
-              }
+              to="/crm-front/add-customer"
             >
               Dodaj klienta
             </Nav.Link>
           )}
           {props.user && (
-            <Nav.Link as={Link} to="/" onClick={logout}>
+            <Nav.Link as={Link} to="/crm-front/" onClick={logout}>
               Logout
             </Nav.Link>
           )}

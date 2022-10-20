@@ -32,7 +32,7 @@ const Login = (props) => {
 
   return (
     <Form className="w-50 mx-auto" onSubmit={handleSubmit}>
-      {props.user && <Navigate to={process.env.WEB_HOST ? "/" + process.env.WEB_HOST + "/customers": "/customers"} />}
+      {props.user && <Navigate to= "/crm-front/customers" />}
       <Form.Group className="mb-3" controlId="username">
         <Form.Label>Login</Form.Label>
         <Form.Control

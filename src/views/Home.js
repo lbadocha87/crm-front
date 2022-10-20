@@ -37,11 +37,7 @@ const Home = () => {
                 <Card.Text>NIP: {customer.nip}</Card.Text>
                 <Button
                   as={Link}
-                  to={
-                    process.env.WEB_HOST
-                      ? "/" + process.env.WEB_HOST + `/customer/${customer._id}`
-                      : `/customer/${customer._id}`
-                  }
+                  to={`/crm-front/customer/${customer._id}`}
                   variant="primary"
                 >
                   Szczegóły
@@ -51,15 +47,7 @@ const Home = () => {
           );
         })}
       </div>
-      <Button
-        variant="success"
-        as={Link}
-        to={
-          process.env.WEB_HOST
-            ? "/" + process.env.WEB_HOST + "/add-customer"
-            : "/add-customer"
-        }
-      >
+      <Button variant="success" as={Link} to="/crm-front/add-customer">
         Dodaj klienta
       </Button>
     </div>
