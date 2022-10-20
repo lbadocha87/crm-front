@@ -12,12 +12,22 @@ const MainNav = (props) => {
   return (
     <Navbar>
       <Container>
-        <Navbar.Brand as={Link} to="/">
+        <Navbar.Brand
+          as={Link}
+          to={process.env.WEB_HOST ? "/" + process.env.WEB_HOST : "/"}
+        >
           CRM
         </Navbar.Brand>
         <Nav className="me-auto">
           {props.user && (
-            <Nav.Link as={Link} to="/add-customer">
+            <Nav.Link
+              as={Link}
+              to={
+                process.env.WEB_HOST
+                  ? "/" + process.env.WEB_HOST + "/add-customer"
+                  : "/add-customer"
+              }
+            >
               Dodaj klienta
             </Nav.Link>
           )}

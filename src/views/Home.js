@@ -35,13 +35,31 @@ const Home = () => {
                 </address>
 
                 <Card.Text>NIP: {customer.nip}</Card.Text>
-                <Button as={Link} to={`/customer/${customer._id}`} variant="primary">Szczegóły</Button>
+                <Button
+                  as={Link}
+                  to={
+                    process.env.WEB_HOST
+                      ? "/" + process.env.WEB_HOST + `/customer/${customer._id}`
+                      : `/customer/${customer._id}`
+                  }
+                  variant="primary"
+                >
+                  Szczegóły
+                </Button>
               </Card.Body>
             </Card>
           );
         })}
       </div>
-      <Button variant="success" as={Link} to={'/add-customer'}>
+      <Button
+        variant="success"
+        as={Link}
+        to={
+          process.env.WEB_HOST
+            ? "/" + process.env.WEB_HOST + "/add-customer"
+            : "/add-customer"
+        }
+      >
         Dodaj klienta
       </Button>
     </div>
