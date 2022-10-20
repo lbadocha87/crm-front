@@ -11,7 +11,7 @@ const App = () => {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')))
   
 
-  axios.defaults.baseURL = "http://localhost:5050/api";
+  axios.defaults.baseURL = process.env.API_HOST || "https://quiet-beyond-09104.herokuapp.com/api";
   axios.defaults.headers.common["x-auth-token"] = user ? user.jwt : ""
   return (
     <Container>

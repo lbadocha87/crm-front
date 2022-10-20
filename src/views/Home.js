@@ -41,7 +41,7 @@ const Home = () => {
           );
         })}
       </div>
-      <Button variant="success" as={Link}>
+      <Button variant="success" as={Link} to={'/add-customer'}>
         Dodaj klienta
       </Button>
     </div>

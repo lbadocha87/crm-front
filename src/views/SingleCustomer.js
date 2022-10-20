@@ -26,6 +26,20 @@ const SingleCustomer = () => {
     });
   }, [id, isAddActionModalVisible]);
 
+  const deleteCustomerEvent = (customerEventId) => {
+    axios
+      .delete(`/customerEvent/delete/${id}`, {
+        data: { customerEventId: customerEventId },
+      })
+      .then((res) => {
+        console.log(res.data);
+        axios.get(`customer/${id}`).then((res) => {
+          console.log(id);
+          setCustomer(res.data);
+        });
+      });
+  };
+
   return (
     <div className="customer">
       <Card className="mb-5">
@@ -62,7 +76,10 @@ const SingleCustomer = () => {
                 <td>{event.type}</td>
                 <td>{event.date}</td>
                 <td>
-                  <Button>Usuń</Button> <Button>Edytuj</Button>
+                  <Button onClick={() => deleteCustomerEvent(event._id)}>
+                    Usuń
+                  </Button>{" "}
+                  <Button>Edytuj</Button>
                 </td>
               </tr>
             );
