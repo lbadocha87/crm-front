@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import AppRoutes from "./components/AppRoutes";
+import MainNav from "./components/MainNav";
 
-function App() {
+import axios from "axios";
+import { Container } from "react-bootstrap";
+
+const App = () => {
+  axios.defaults.baseURL = "http://localhost:5050/api";
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <MainNav />
+      <AppRoutes />
+    </Container>
   );
-}
+};
 
 export default App;
