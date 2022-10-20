@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/crm-front/static/css/main.a102879e.css",
-    "main.js": "/crm-front/static/js/main.82d8f02b.js",
+    "main.js": "/crm-front/static/js/main.e2e1b2c4.js",
     "static/js/787.920d0757.chunk.js": "/crm-front/static/js/787.920d0757.chunk.js",
     "index.html": "/crm-front/index.html",
     "main.a102879e.css.map": "/crm-front/static/css/main.a102879e.css.map",
-    "main.82d8f02b.js.map": "/crm-front/static/js/main.82d8f02b.js.map",
+    "main.e2e1b2c4.js.map": "/crm-front/static/js/main.e2e1b2c4.js.map",
     "787.920d0757.chunk.js.map": "/crm-front/static/js/787.920d0757.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a102879e.css",
-    "static/js/main.82d8f02b.js"
+    "static/js/main.e2e1b2c4.js"
   ]
 }
