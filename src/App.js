@@ -4,14 +4,19 @@ import MainNav from "./components/MainNav";
 
 import axios from "axios";
 import { Container } from "react-bootstrap";
+import { useState } from "react";
 
 const App = () => {
-  axios.defaults.baseURL = "http://localhost:5050/api";
 
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')))
+  
+
+  axios.defaults.baseURL = "http://localhost:5050/api";
+  axios.defaults.headers.common["x-auth-token"] = user ? user.jwt : ""
   return (
     <Container>
-      <MainNav />
-      <AppRoutes />
+      <MainNav user={user} setUser={setUser} />
+      <AppRoutes user={user} setUser={setUser} />
     </Container>
   );
 };

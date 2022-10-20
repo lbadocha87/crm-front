@@ -35,7 +35,7 @@ const Home = () => {
                 </address>
 
                 <Card.Text>NIP: {customer.nip}</Card.Text>
-                <Button as={Link} to={`customer/${customer._id}`} variant="primary">Szczegóły</Button>
+                <Button as={Link} to={`/customer/${customer._id}`} variant="primary">Szczegóły</Button>
               </Card.Body>
             </Card>
           );
